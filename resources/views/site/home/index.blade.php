@@ -21,7 +21,7 @@
 
     @endfor
 
-    @if(count($arrayData)>0)
+    {{-- comentario  @if(count($arrayData)>0)
 
        @foreach($arrayData as $array)
 
@@ -35,12 +35,18 @@
 
     @endif
 
+    --}}
+
     @forelse($arrayData as $array)
     <p>Exibe forelse  {{$array}}</p> 
     @empty
     <p>Não existem itens na lista</p> 
 
     @endforelse
+
+    @include('site.includes.sidebar')
+
+
 
    @endsection
 
