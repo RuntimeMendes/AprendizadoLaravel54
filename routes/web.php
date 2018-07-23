@@ -2,6 +2,7 @@
 
 
 Route::get('/categoria/{id}','Site\SiteController@categoria');
+Route::resource('/Painel/Produtos','Painel\ProdutosController');
 
 
 Route::get('/categoria2/{id?}','Site\SiteController@categoriaOp');
