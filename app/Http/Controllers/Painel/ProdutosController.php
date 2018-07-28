@@ -52,7 +52,7 @@ class ProdutosController extends Controller
 
     */
 
-     $insert =  $this->produtos->insert([
+     $insert =  $this->produtos->create([
 
         'nome' => 'bolsa',
         'numero' => '12345',

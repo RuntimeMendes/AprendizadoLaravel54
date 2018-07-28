@@ -1,7 +1,8 @@
 <?php
 
-
+Route::get('/Painel/Produtos/testes','Painel\ProdutosController@testes');
 Route::get('/categoria/{id}','Site\SiteController@categoria');
+
 Route::resource('/Painel/Produtos','Painel\ProdutosController');
 
 
