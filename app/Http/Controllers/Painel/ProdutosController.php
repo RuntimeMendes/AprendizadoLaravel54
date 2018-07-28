@@ -28,9 +28,8 @@ class ProdutosController extends Controller
 
    public function testes (){
 
-
     $prod = $this->produto;
-    
+
     $prod->nome = 'caderno';
     $prod->numero = 12321;
     $prod->ativo = 1;
