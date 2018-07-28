@@ -54,10 +54,12 @@ class ProdutosController extends Controller
 
      $insert =  $this->produtos->create([
 
-        'nome' => 'bolsa',
-        'numero' => '12345',
+        'nome' => 'caneta',
+        'numero' => '125',
         'ativo' => 1,
-        'descricao' => 'matterial escolar',
+      
+       // 'categoria' => 'Material diverso',
+        'descricao' => 'item escolar',
          
         
         
@@ -66,7 +68,7 @@ class ProdutosController extends Controller
 
       if($insert == true){
 
-        return 'inserido com sucesso';
+        return "inserido com sucesso   {$insert->id}";
   
         }else{
   
