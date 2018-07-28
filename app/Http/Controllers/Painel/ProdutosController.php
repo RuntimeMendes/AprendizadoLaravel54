@@ -29,9 +29,9 @@ class ProdutosController extends Controller
 
    public function testes (){
 
-    $prod = $this->produtos;
+  //  $prod = $this->produtos;
 
-    $prod->nome = 'caderno';
+    /*$prod->nome = 'caderno';
     $prod->numero = 12321;
     $prod->ativo = 1;
    // $prod->categoria = 'eletronico';
@@ -50,8 +50,19 @@ class ProdutosController extends Controller
         return 'falha ao inserir';
       }
 
-    
+    */
 
+     $this->produtos->insert([
+
+        'nome' => 'bolsa',
+        'numero' => '12345',
+        'ativo' => 1,
+        'descricao' => 'matterial escolar',
+         
+        
+        
+     ]);
+      //esta é uma forma mais classica
 
    
   }
