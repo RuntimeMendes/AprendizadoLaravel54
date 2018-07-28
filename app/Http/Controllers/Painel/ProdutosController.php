@@ -11,16 +11,17 @@ class ProdutosController extends Controller
     //
    private $produtos;
 
-   function __construct($produto) {
-    $this->produto = $produto;
+  public  function __construct(Produtos $produtos) {
+    $this->produtos = $produtos;
+
 }
 
     
 
-   public function index(Produtos $produtos){
+   public function index(){
 
     //faz a consulta no banco
-    $produtosConsulta = $produtos->all(); 
+    $produtosConsulta = $this->produtos->all(); 
     
 
     return view('Painel.Produtos.index',compact('produtosConsulta'));
@@ -28,22 +29,31 @@ class ProdutosController extends Controller
 
    public function testes (){
 
-    $prod = $this->produto;
+    $prod = $this->produtos;
 
     $prod->nome = 'caderno';
     $prod->numero = 12321;
     $prod->ativo = 1;
-    $prod->categoria = 'eletronico';
+   // $prod->categoria = 'eletronico';
     $prod->descricao = 'Material para  escola';
 
 
-    return 'testando ricardo =]  salvo';
+
+     $insert = $prod->save();
+
+      if($insert == true){
+
+      return 'inserido com sucesso';
+
+      }else{
+
+        return 'falha ao inserir';
+      }
+
+    
 
 
-   }
-
-
+   
+  }
 
 }
-
-
