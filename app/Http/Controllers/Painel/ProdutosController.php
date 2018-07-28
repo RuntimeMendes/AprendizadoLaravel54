@@ -52,7 +52,7 @@ class ProdutosController extends Controller
 
     */
 
-     $this->produtos->insert([
+     $insert =  $this->produtos->insert([
 
         'nome' => 'bolsa',
         'numero' => '12345',
@@ -63,6 +63,16 @@ class ProdutosController extends Controller
         
      ]);
       //esta é uma forma mais classica
+
+      if($insert == true){
+
+        return 'inserido com sucesso';
+  
+        }else{
+  
+          return 'falha ao inserir';
+        }
+  
 
    
   }
