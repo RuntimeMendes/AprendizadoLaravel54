@@ -52,6 +52,8 @@ class ProdutosController extends Controller
 
     */
 
+    /*
+
      $insert =  $this->produtos->create([
 
         'nome' => 'caneta',
@@ -75,6 +77,74 @@ class ProdutosController extends Controller
           return 'falha ao inserir';
         }
   
+     */
+
+    //método que retorna o item pelo id
+    //método de update antigo
+    /* $prod = $this->produtos->find(5);
+
+      $prod->nome = 'update';
+      $prod->numero=79789;
+      $prod->ativo = 1;
+
+      $update = $prod->save();
+
+      if($update ==true){
+
+         return 'alterado com sucesso';
+
+         }else{
+
+         return 'falha ao alterar ';
+
+      }*/
+
+   //exemplo dois pegando pelo id da tablea
+    /*$prod = $this->produtos->find(6);
+
+    $update = $prod->update([
+       'nome' =>'update teste',
+       'numero' =>1234,
+       'ativo'  =>1,
+
+
+      ]);
+      if($update ==true){
+
+        return 'alterado com sucesso';
+
+        }else{
+
+        return 'falha ao alterar ';
+
+     }
+     */
+
+  //exemplo 3 quando nao se consegue pegar pelo id
+  //pegando de outra tabela 
+    $prod = $this->produtos->where('numero',12321);
+
+    $update = $prod->update([
+       'nome' =>'update teste 3 laravel',
+       'numero' =>1234,
+       'ativo'  =>1,
+
+
+      ]);
+      if($update ==true){
+
+        return 'alterado com sucesso';
+
+        }else{
+
+        return 'falha ao alterar ';
+
+     }
+
+
+
+
+
 
    
   }
