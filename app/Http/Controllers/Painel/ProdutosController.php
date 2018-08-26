@@ -122,7 +122,7 @@ class ProdutosController extends Controller
 
   //exemplo 3 quando nao se consegue pegar pelo id
   //pegando de outra tabela 
-    $prod = $this->produtos->where('numero',12321);
+    /*$prod = $this->produtos->where('numero',12321);
 
     $update = $prod->update([
        'nome' =>'update teste 3 laravel',
@@ -141,7 +141,18 @@ class ProdutosController extends Controller
 
      }
 
+       */
+      //delete
+      $prod = $this->produtos->find(3);
+      $delete = $prod->delete();
 
+      if($delete){
+
+        return  'deletado com sucesso';
+      }else{
+
+        return 'falha na hora de apagar';
+      }
 
 
 
